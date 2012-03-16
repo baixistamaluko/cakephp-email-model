@@ -1,0 +1,54 @@
+<?php
+class SendMailShell extends AppShell {
+	public $uses = array('Mails');
+
+	public function main() {
+		
+		set_time_limit(0);  //NO timeout
+		ini_set('memory_limit', '64M'); //max memory limit
+
+		$mails = $this->Mails->find('all',array('limit'=>3000,'order'=>'id DESC','conditions'=>array('sent'=>false,'OR'=>array('when'=>null,'when <='=> date("Y-m-d") ))) );
+		App::uses('CakeEmail', 'Network/Email');
+		
+		$from = 'support@rsaeel.com';
+		$CakeEmail = new CakeEmail();
+
+		/*
+		$CakeEmail->smtpOptions = array(
+		'timeout'=>'30',
+		'port'=>'465',
+		'host' => 'ssl://smtp.gmail.cxom',
+		'username'=>'123456789@gmail.com',
+		'password'=>'123456789',
+		);
+		$CakeEmail->delivery = 'debug';
+		*/
+
+	//	debug($mails);
+
+		foreach($mails as $each) {
+			$data = json_decode($each['Mails']['data'], true);
+			try{
+				$CakeEmail->template($data['template']);
+				$CakeEmail->viewVars($data['options']);
+				//$CakeEmail->sendAs('both');
+				$CakeEmail->to($data['email']);
+				$CakeEmail->from($from);
+				$CakeEmail->subject($data['subject']);
+				$CakeEmail->emailFormat('both');
+				
+				
+				
+				if($CakeEmail->send()) {
+					debug('saved');
+					$data = array('id' => $each['Mails']['id'], 'sent' => 1);
+					$this->Mails->save($data);				
+				}
+			} catch (Exception $e) {
+			    echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
+			debug($CakeEmail->smtpError);
+			$CakeEmail->reset();
+		}
+	}
+}

@@ -1,0 +1,2145 @@
+<?php
+App::uses('AppModel', 'Model');
+
+class Mobile extends AppModel {
+   
+   var $useTable = false;
+
+   public $MobileMetaData = array (
+  'AD' => 
+  array (
+    'countryCode' => '376',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[346]\\d{5}',
+    ),
+  ),
+  'AE' => 
+  array (
+    'countryCode' => '971',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5[056]\\d{7}',
+    ),
+  ),
+  'AF' => 
+  array (
+    'countryCode' => '93',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[057-9]\\d{7}',
+    ),
+  ),
+  'AG' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '268(?:464|7(?:2[0-9]|64|7[0-689]|8[02-68]))\\d{4}',
+    ),
+  ),
+  'AI' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '264(?:235|476|5(?:3[6-9]|8[1-4])|7(?:29|72))\\d{4}',
+    ),
+  ),
+  'AL' => 
+  array (
+    'countryCode' => '355',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[6-9]\\d{7}',
+    ),
+  ),
+  'AM' => 
+  array (
+    'countryCode' => '374',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:55|77|9[1-9])\\d{6}',
+    ),
+  ),
+  'AN' => 
+  array (
+    'countryCode' => '599',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:318|5(?:1[01]|2[0-7]|5\\d|8[016-8])|7(?:0[01]|[89]\\d)|9(?:5(?:[1246]\\d|3[01])|6(?:[1679]\\d|3[01])))\\d{4}|416[15-8]\\d{3}',
+    ),
+  ),
+  'AO' => 
+  array (
+    'countryCode' => '244',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[1-3]\\d{7}',
+    ),
+  ),
+  'AR' => 
+  array (
+    'countryCode' => '54',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '675\\d{7}|9(?:11[2-9]\\d{7}|(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))[2-9]\\d{6}|\\d{4}[2-9]\\d{5})',
+    ),
+  ),
+  'AS' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '684(?:733|258)\\d{4}',
+    ),
+  ),
+  'AT' => 
+  array (
+    'countryCode' => '43',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:44|5[0-3579]|6[013-9]|[7-9]\\d)\\d{4,10}',
+    ),
+  ),
+  'AU' => 
+  array (
+    'countryCode' => '61',
+    'internationalPrefix' => '(?:14(?:1[14]|34|4[17]|[56]6|7[47]|88))?001[14-689]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '14(?:5\\d|71)\\d{5}|4(?:[0-2]\\d|3[0-57-9]|4[47-9]|5[0-37-9]|6[6-9]|7[07-9]|8[7-9])\\d{6}',
+    ),
+  ),
+  'AW' => 
+  array (
+    'countryCode' => '297',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5(?:6\\d|9[2-478])|6(?:[039]0|22|[46][01])|7[34]\\d|9(?:6[45]|9[4-8]))\\d{4}',
+    ),
+  ),
+  'AX' => 
+  array (
+    'countryCode' => '358',
+    'internationalPrefix' => '00|99[049]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '4\\d{5,10}|50\\d{4,8}',
+    ),
+  ),
+  'AZ' => 
+  array (
+    'countryCode' => '994',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[46]0|5[015]|7[07])\\d{7}',
+    ),
+  ),
+  'BA' => 
+  array (
+    'countryCode' => '387',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[1-356]\\d{6}',
+    ),
+  ),
+  'BB' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '246(?:(?:2[346]|45|82)\\d|25[0-4])\\d{4}',
+    ),
+  ),
+  'BD' => 
+  array (
+    'countryCode' => '880',
+    'internationalPrefix' => '00[12]?',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:1[13-9]\\d|(?:3[78]|44)[02-9]|6(?:44|6[02-9]))\\d{7}',
+    ),
+  ),
+  'BE' => 
+  array (
+    'countryCode' => '32',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '4(?:[67]\\d|8[3-9]|9[1-9])\\d{6}',
+    ),
+  ),
+  'BF' => 
+  array (
+    'countryCode' => '226',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:[02-68]\\d|1[0-4689]|7[0-6]|9[0-689])\\d{5}',
+    ),
+  ),
+  'BG' => 
+  array (
+    'countryCode' => '359',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:8[7-9]|98)\\d{7}|4(?:3[0789]|8\\d)\\d{5}',
+    ),
+  ),
+  'BH' => 
+  array (
+    'countryCode' => '973',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:3(?:[23469]\\d|77|8[348])\\d|6(?:1[16]\\d|6(?:[06]\\d3[03-9]|44|)|9(?:69|9[6-9]))|77\\d{2})\\d{4}',
+    ),
+  ),
+  'BI' => 
+  array (
+    'countryCode' => '257',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:29\\d|7(?:1[1-3]|[4-9]\\d))\\d{5}',
+    ),
+  ),
+  'BJ' => 
+  array (
+    'countryCode' => '229',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:6[46]|9[03-8])\\d{6}',
+    ),
+  ),
+  'BL' => 
+  array (
+    'countryCode' => '590',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '690(?:10|2[27]|66|77|8[78])\\d{4}',
+    ),
+  ),
+  'BM' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '441(?:[37]\\d|5[0-39])\\d{5}',
+    ),
+  ),
+  'BN' => 
+  array (
+    'countryCode' => '673',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[78]\\d{6}',
+    ),
+  ),
+  'BO' => 
+  array (
+    'countryCode' => '591',
+    'internationalPrefix' => '00(1\\d)?',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[67]\\d{7}',
+    ),
+  ),
+  'BR' => 
+  array (
+    'countryCode' => '55',
+    'internationalPrefix' => '00(?:1[45]|2[135]|[34]1|43)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1(?:1(?:[6-9]\\d|5[347])|[2-9][6-9]\\d)\\d{6}|(?:[4689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[6-9]\\d{7}',
+    ),
+  ),
+  'BS' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '242(?:3(?:5[79]|[79]5)|4(?:[2-4][1-9]|5[1-8]|6[2-8]|7\\d|81)|5(?:2[34]|3[35]|44|5[1-9]|65|77)|6[34]6|727)\\d{4}',
+    ),
+  ),
+  'BT' => 
+  array (
+    'countryCode' => '975',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[17]7\\d{6}',
+    ),
+  ),
+  'BW' => 
+  array (
+    'countryCode' => '267',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:[1-35]\\d{6}|[46][0-7]\\d{5})',
+    ),
+  ),
+  'BY' => 
+  array (
+    'countryCode' => '375',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:2(?:5[5679]|9[1-9])|33\\d|44\\d)\\d{6}',
+    ),
+  ),
+  'BZ' => 
+  array (
+    'countryCode' => '501',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:[0-3]\\d|[67][01])\\d{4}',
+    ),
+  ),
+  'CA' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:2(?:04|26|[48]9|50)|3(?:06|43)|4(?:03|1[68]|38|5[06])|5(?:0[06]|1[49]|79|8[17])|6(?:0[04]|13|47)|7(?:0[059]|80|78)|8(?:[06]7|19|)|90[25])[2-9]\\d{6}',
+    ),
+  ),
+  'CC' => 
+  array (
+    'countryCode' => '61',
+    'internationalPrefix' => '(?:14(?:1[14]|34|4[17]|[56]6|7[47]|88))?001[14-689]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '4(?:[0-2]\\d|3[0-57-9]|4[47-9]|5[0-37-9]|6[6-9]|7[07-9]|8[7-9])\\d{6}',
+    ),
+  ),
+  'CD' => 
+  array (
+    'countryCode' => '243',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:8[0-2489]|9[7-9])\\d{7}',
+    ),
+  ),
+  'CF' => 
+  array (
+    'countryCode' => '236',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[0257]\\d{6}',
+    ),
+  ),
+  'CG' => 
+  array (
+    'countryCode' => '242',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '0[14-6]\\d{7}',
+    ),
+  ),
+  'CH' => 
+  array (
+    'countryCode' => '41',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[46-9]\\d{7}',
+    ),
+  ),
+  'CI' => 
+  array (
+    'countryCode' => '225',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:0[1-9]|4[04-9]|5[07]|6[0567])\\d{6}',
+    ),
+  ),
+  'CK' => 
+  array (
+    'countryCode' => '682',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5[0-68]|7\\d)\\d{3}',
+    ),
+  ),
+  'CL' => 
+  array (
+    'countryCode' => '56',
+    'internationalPrefix' => '(?:0|1(?:1[0-69]|2[0-57]|5[13-58]|69|7[0167]|8[018]))0',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[6-9]\\d{7}',
+    ),
+  ),
+  'CM' => 
+  array (
+    'countryCode' => '237',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[79]\\d{7}',
+    ),
+  ),
+  'CN' => 
+  array (
+    'countryCode' => '86',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1(?:3\\d|4[57]|5[0-35-9]|8[0235-9])\\d{8}',
+    ),
+  ),
+  'CO' => 
+  array (
+    'countryCode' => '57',
+    'internationalPrefix' => '00[579]|#555|#999',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '3(?:0[0-24]|1[0-8]|2[01])\\d{7}',
+    ),
+  ),
+  'CR' => 
+  array (
+    'countryCode' => '506',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '57[01]\\d[01]\\d{3}|8[36789]\\d{6}',
+    ),
+  ),
+  'CU' => 
+  array (
+    'countryCode' => '53',
+    'internationalPrefix' => '119',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5\\d{7}',
+    ),
+  ),
+  'CV' => 
+  array (
+    'countryCode' => '238',
+    'internationalPrefix' => '0',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:9\\d|59)\\d{5}',
+    ),
+  ),
+  'CY' => 
+  array (
+    'countryCode' => '357',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[5-79]\\d{6}',
+    ),
+  ),
+  'CX' => 
+  array (
+    'countryCode' => '61',
+    'internationalPrefix' => '(?:14(?:1[14]|34|4[17]|[56]6|7[47]|88))?001[14-689]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '4(?:[0-2]\\d|3[0-57-9]|4[47-9]|5[0-37-9]|6[6-9]|7[07-9]|8[7-9])\\d{6}',
+    ),
+  ),
+  'CZ' => 
+  array (
+    'countryCode' => '420',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:60[1-8]|7(?:0[25]|[2379]\\d))\\d{6}',
+    ),
+  ),
+  'DE' => 
+  array (
+    'countryCode' => '49',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1(?:5\\d{9}|7(?:[0-57-9]|6\\d)\\d{7}|6(?:[02]\\d{7,8}|3\\d{7}))',
+    ),
+  ),
+  'DJ' => 
+  array (
+    'countryCode' => '253',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[6-8]\\d{5}',
+    ),
+  ),
+  'DK' => 
+  array (
+    'countryCode' => '45',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[2-7]\\d|8[126-9]|9[6-9])\\d{6}',
+    ),
+  ),
+  'DM' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '767(?:2(?:[234689]5|7[5-7])|31[5-7]|61[2-7])\\d{4}',
+    ),
+  ),
+  'DO' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '8[024]9[2-9]\\d{6}',
+    ),
+  ),
+  'DZ' => 
+  array (
+    'countryCode' => '213',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5[56]|6[569]|7[7-9])\\d{7}',
+    ),
+  ),
+  'EC' => 
+  array (
+    'countryCode' => '593',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:69|[89]\\d)\\d{6}',
+    ),
+  ),
+  'EE' => 
+  array (
+    'countryCode' => '372',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5\\d|8[1-5])\\d{6}|5(?:[02]\\d{2}|1(?:[0-8]\\d|95)|5[0-478]\\d|64[0-4]|65[1-589])\\d{3}',
+    ),
+  ),
+  'EG' => 
+  array (
+    'countryCode' => '20',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1(?:[0-246-9]|5[0-2])\\d{7}|1(?:0[0169]|1[124]|2[0278])\\d{7}',
+    ),
+  ),
+  'ER' => 
+  array (
+    'countryCode' => '291',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '17[1-3]\\d{4}|7\\d{6}',
+    ),
+  ),
+  'ES' => 
+  array (
+    'countryCode' => '34',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:6\\d|7[1-4])\\d{7}',
+    ),
+  ),
+  'ET' => 
+  array (
+    'countryCode' => '251',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[12]\\d{7}',
+    ),
+  ),
+  'FI' => 
+  array (
+    'countryCode' => '358',
+    'internationalPrefix' => '00|99[049]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '4\\d{5,10}|50\\d{4,8}',
+    ),
+  ),
+  'FJ' => 
+  array (
+    'countryCode' => '679',
+    'internationalPrefix' => '0(?:0|52)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7[0-467]|8[367]|9[02346-9])\\d{5}',
+    ),
+  ),
+  'FK' => 
+  array (
+    'countryCode' => '500',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[56]\\d{4}',
+    ),
+  ),
+  'FM' => 
+  array (
+    'countryCode' => '691',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '3[2357]0[1-9]\\d{3}|9[2-7]\\d{5}',
+    ),
+  ),
+  'FO' => 
+  array (
+    'countryCode' => '298',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:2[1-9]|5\\d|7[1-79])\\d{4}',
+    ),
+  ),
+  'FR' => 
+  array (
+    'countryCode' => '33',
+    'internationalPrefix' => '[04579]0',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6\\d{8}|7[5-9]\\d{7}',
+    ),
+  ),
+  'GA' => 
+  array (
+    'countryCode' => '241',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '0(?:5(?:0[89]|3[0-4]|8[0-26]|9[238])|6(?:0[3-7]|1[01]|2[0-7]|6[0-589]|71|83|9[57])|7(?:1[2-5]|2[89]|3[35-9]|4[01]|5[0-347-9]|[67]\\d|8[457-9]|9[0146]))\\d{4}',
+    ),
+  ),
+  'GB' => 
+  array (
+    'countryCode' => '44',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:[1-4]\\d\\d|5(?:0[0-8]|[13-9]\\d|2[0-35-9])|7(?:0[1-9]|[1-7]\\d|8[02-9]|9[0-689])|8(?:[014-9]\\d|[23][0-8])|9(?:[04-9]\\d|1[02-9]|2[0-35-9]|3[0-689]))\\d{6}',
+    ),
+  ),
+  'GD' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '473(?:4(?:0[3-79]|1[04-9]|20|58)|53[3-8])\\d{4}',
+    ),
+  ),
+  'GE' => 
+  array (
+    'countryCode' => '995',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5(?:14|5[01578]|68|7[0147-9]|9[0-35-9])\\d{6}',
+    ),
+  ),
+  'GF' => 
+  array (
+    'countryCode' => '594',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '694(?:[04][0-7]|1[0-5]|2[0-46-9]|38|9\\d)\\d{4}',
+    ),
+  ),
+  'GG' => 
+  array (
+    'countryCode' => '44',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:781|839|911)\\d{6}',
+    ),
+  ),
+  'GH' => 
+  array (
+    'countryCode' => '233',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:2[034678]|5[47])\\d{7}',
+    ),
+  ),
+  'GI' => 
+  array (
+    'countryCode' => '350',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5[4-8]|60)\\d{6}',
+    ),
+  ),
+  'GL' => 
+  array (
+    'countryCode' => '299',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[245][2-9]\\d{4}',
+    ),
+  ),
+  'GM' => 
+  array (
+    'countryCode' => '220',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[3679]\\d{6}',
+    ),
+  ),
+  'GN' => 
+  array (
+    'countryCode' => '224',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '55\\d{6}|6(?:0(?:2\\d|3[3467]|5[2457-9])|[24578]\\d{2}|3(?:[14]0|35))\\d{4}',
+    ),
+  ),
+  'GP' => 
+  array (
+    'countryCode' => '590',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '690(?:00|1[1-9]|2[013-5]|[3-5]\\d|6[0-57-9]|7[1-6]|8[0-6]|9[09])\\d{4}',
+    ),
+  ),
+  'GQ' => 
+  array (
+    'countryCode' => '240',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:222|551)\\d{6}',
+    ),
+  ),
+  'GR' => 
+  array (
+    'countryCode' => '30',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '69\\d{8}',
+    ),
+  ),
+  'GT' => 
+  array (
+    'countryCode' => '502',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[345]\\d{7}',
+    ),
+  ),
+  'GU' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '671(?:3(?:00|3[39]|4[349]|55|6[26])|4(?:56|7[1-9]|8[23678])|5(?:55|6[2-5]|88)|6(?:3[2-578]|4[24-9]|5[34]|78|8[5-9])|7(?:[079]7|2[0167]|3[45]|8[789])|8(?:[2-5789]8|6[48])|9(?:2[29]|6[79]|7[179]|8[789]|9[78]))\\d{4}',
+    ),
+  ),
+  'GW' => 
+  array (
+    'countryCode' => '245',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[5-7]\\d{6}',
+    ),
+  ),
+  'GY' => 
+  array (
+    'countryCode' => '592',
+    'internationalPrefix' => '001',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6\\d{6}',
+    ),
+  ),
+  'HK' => 
+  array (
+    'countryCode' => '852',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[5-79]\\d{7}',
+    ),
+  ),
+  'HN' => 
+  array (
+    'countryCode' => '504',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[37-9]\\d{7}',
+    ),
+  ),
+  'HR' => 
+  array (
+    'countryCode' => '385',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[1257-9]\\d{6,10}',
+    ),
+  ),
+  'HT' => 
+  array (
+    'countryCode' => '509',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:3[1-9]|4\\d)\\d{6}',
+    ),
+  ),
+  'HU' => 
+  array (
+    'countryCode' => '36',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[27]0|3[01])\\d{7}',
+    ),
+  ),
+  'ID' => 
+  array (
+    'countryCode' => '62',
+    'internationalPrefix' => '0(?:0[1789]|10(?:00|1[67]))',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '8[1-35-9]\\d{7,9}',
+    ),
+  ),
+  'IE' => 
+  array (
+    'countryCode' => '353',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '8(?:22\\d{6}|[35-9]\\d{7,8})',
+    ),
+  ),
+  'IL' => 
+  array (
+    'countryCode' => '972',
+    'internationalPrefix' => '0(?:0|1[2-48])',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5[024679]\\d{7}',
+    ),
+  ),
+  'IM' => 
+  array (
+    'countryCode' => '44',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[569]24\\d{6}',
+    ),
+  ),
+  'IN' => 
+  array (
+    'countryCode' => '91',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7(?:2(?:0[04-9]|5[09]|7[5-8]|9[389])|3(?:0[13-9]|5[0-4789]|7[3679]|8[1-9]|9[689])|4(?:0[245789]|1[15-9]|[29][89]|39|8[389])|5(?:0[0-5789]|[47]9|[25]0|6[6-9]|[89][7-9])|6(?:0[027]|12|20|3[19]|5[45]|6[5-9]|7[679]|9[6-9])|7(?:0[27-9]|[39][5-9]|42|60)|8(?:[03][07-9]|14|2[7-9]|4[25]|6[09]|7\\d|9[013-9]))|8(?:0(?:[01589]\\d|66)|1(?:[024]\\d|1[56]|30|7[19]|97)|2(?:[2369]\\d|52|7[01357]|8[567])|3(?:0[235-8]|4[14789]|74|90)|4(?:[02-58]\\d|10|6[09])|5(?:0[079]|11|2\\d|30|4[47]|53|7[45]|9[015])|6(?:[0589]\\d|7[09])|7(?:1[24]|[2569]\\d)|8(?:[07-9]\\d|17|2[024-8]|44|5[389]|6[0167])|9(?:[057-9]\\d|2[35-9]|3[09]|4[036-8]|6[0-46-9]))|9\\d{3})\\d{6}',
+    ),
+  ),
+  'IO' => 
+  array (
+    'countryCode' => '246',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '38\\d{5}',
+    ),
+  ),
+  'IQ' => 
+  array (
+    'countryCode' => '964',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[3-9]\\d{8}',
+    ),
+  ),
+  'IR' => 
+  array (
+    'countryCode' => '98',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:1\\d|3[124-8])\\d{7}',
+    ),
+  ),
+  'IS' => 
+  array (
+    'countryCode' => '354',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '38[59]\\d{6}|(?:6(?:1[0-8]|2[0-8]|3[0-27-9]|4[0-29]|5[029]|[67][0-69]|[89]\\d)|7(?:5[057]|7[0-7])|8(?:2[0-5]|[469]\\d|5[1-9]))\\d{4}',
+    ),
+  ),
+  'IT' => 
+  array (
+    'countryCode' => '39',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '3\\d{8,9}',
+    ),
+  ),
+  'JE' => 
+  array (
+    'countryCode' => '44',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:509|7(?:00|97)|829|937)\\d{6}',
+    ),
+  ),
+  'JM' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '876(?:2[1789]\\d|[348]\\d{2}|5(?:08|27|6[0-24-9]|[3-578]\\d)|7(?:0[07]|7\\d|8[1-47-9]|9[0-36-9])|9(?:[01]9|9[0579]))\\d{4}',
+    ),
+  ),
+  'JO' => 
+  array (
+    'countryCode' => '962',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:[1-8]\\d|9[02-9])\\d{6}',
+    ),
+  ),
+  'JP' => 
+  array (
+    'countryCode' => '81',
+    'internationalPrefix' => '010',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[79]0\\d|80[1-9])\\d{7}',
+    ),
+  ),
+  'KE' => 
+  array (
+    'countryCode' => '254',
+    'internationalPrefix' => '000',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:0[0-5]|[123]\\d|5[0-3]|7[0-5])\\d{6}',
+    ),
+  ),
+  'KG' => 
+  array (
+    'countryCode' => '996',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5[124-7]\\d{7}|7(?:0[0-357-9]|7\\d)\\d{6}',
+    ),
+  ),
+  'KH' => 
+  array (
+    'countryCode' => '855',
+    'internationalPrefix' => '00[178]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:(?:1[0-35-9]|6[6-9]|7[06-89])[1-9]|8(?:0[89]|5[2-689]|8\\d{2}|[13469]\\d|)|9(?:[0-689][1-9]|7[1-9]\\d?))\\d{5}',
+    ),
+  ),
+  'KI' => 
+  array (
+    'countryCode' => '686',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6\\d{4}|9(?:[0-8]\\d|9[015-8])\\d{2}',
+    ),
+  ),
+  'KM' => 
+  array (
+    'countryCode' => '269',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '3[234]\\d{5}',
+    ),
+  ),
+  'KN' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '869(?:5(?:5[6-8]|6[5-7])|66\\d|76[02-6])\\d{4}',
+    ),
+  ),
+  'KP' => 
+  array (
+    'countryCode' => '850',
+    'internationalPrefix' => '00|99',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '19[123]\\d{7}',
+    ),
+  ),
+  'KR' => 
+  array (
+    'countryCode' => '82',
+    'internationalPrefix' => '00(?:[124-68]|[37]\\d{2})',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1[0-25-9]\\d{7,8}',
+    ),
+  ),
+  'KW' => 
+  array (
+    'countryCode' => '965',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5(?:0[0-26]|5\\d)|6(?:0[034679]|5[015-9]|6\\d|7[067]|9[69])|9(?:0[09]|4[049]|66|[79]\\d))\\d{5}',
+    ),
+  ),
+  'KY' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '345(?:32[3-79]|5(?:1[467]|2[5-7]|4[5-9])|9(?:1[679]|2[4-9]|3[89]))\\d{4}',
+    ),
+  ),
+  'KZ' => 
+  array (
+    'countryCode' => '7',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:0[01257]|6[02-4]|7[157])\\d{7}',
+    ),
+  ),
+  'LA' => 
+  array (
+    'countryCode' => '856',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '20(?:2[23]|5[4-68]|7[78]|9[7-9])\\d{6}',
+    ),
+  ),
+  'LB' => 
+  array (
+    'countryCode' => '961',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:3\\d|7(?:[01]\\d|6[136-9]))\\d{5}',
+    ),
+  ),
+  'LC' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '758(?:28[4-7]|384|4(?:6[01]|8[4-9])|5(?:1[89]|20|84)|7(?:1[2-9]|2[0-4]))\\d{4}',
+    ),
+  ),
+  'LI' => 
+  array (
+    'countryCode' => '423',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '66(?:[0178][0-4]|2[025-9]|[36]\\d|4[129]|5[45]|9[019])\\d{5}|7(?:4[2-59]|56|[6-9]\\d)\\d{4}',
+    ),
+  ),
+  'LK' => 
+  array (
+    'countryCode' => '94',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[12578]\\d{7}',
+    ),
+  ),
+  'LR' => 
+  array (
+    'countryCode' => '231',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:4[67]|5\\d|6[4-8]|7(?:76\\d|\\d{2})|880\\d)\\d{5}',
+    ),
+  ),
+  'LS' => 
+  array (
+    'countryCode' => '266',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[56]\\d{7}',
+    ),
+  ),
+  'LT' => 
+  array (
+    'countryCode' => '370',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6\\d{7}',
+    ),
+  ),
+  'LU' => 
+  array (
+    'countryCode' => '352',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[269][18]\\d{6}',
+    ),
+  ),
+  'LV' => 
+  array (
+    'countryCode' => '371',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '2\\d{7}',
+    ),
+  ),
+  'LY' => 
+  array (
+    'countryCode' => '218',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[1-6]\\d{7}',
+    ),
+  ),
+  'MA' => 
+  array (
+    'countryCode' => '212',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:0[0-36]|[14-7]\\d|2[236]|3[348]|99)\\d{6}',
+    ),
+  ),
+  'MC' => 
+  array (
+    'countryCode' => '377',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6\\d{8}|4\\d{7}',
+    ),
+  ),
+  'MD' => 
+  array (
+    'countryCode' => '373',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:562|6(?:50|7[1-4]|[089]\\d)|7(?:7[47-9]|[89]\\d))\\d{5}',
+    ),
+  ),
+  'ME' => 
+  array (
+    'countryCode' => '382',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:32\\d|[89]\\d{2}|7(?:[0-8]\\d|9(?:[3-9]|[0-2]\\d)))\\d{4}',
+    ),
+  ),
+  'MG' => 
+  array (
+    'countryCode' => '261',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '3[02-4]\\d{7}',
+    ),
+  ),
+  'MF' => 
+  array (
+    'countryCode' => '590',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '690(?:10|2[27]|66|77|8[78])\\d{4}',
+    ),
+  ),
+  'MH' => 
+  array (
+    'countryCode' => '692',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:235|329|45[56]|545)\\d{4}',
+    ),
+  ),
+  'MK' => 
+  array (
+    'countryCode' => '389',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[0-25-8]\\d{6}',
+    ),
+  ),
+  'ML' => 
+  array (
+    'countryCode' => '223',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:6(?:[3569]\\d)|7(?:[08][1-9]|[3579][0-4]|4[014-7]|[16]\\d))\\d{5}',
+    ),
+  ),
+  'MM' => 
+  array (
+    'countryCode' => '95',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:[25689]\\d|444)\\d{5}',
+    ),
+  ),
+  'MN' => 
+  array (
+    'countryCode' => '976',
+    'internationalPrefix' => '001',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:8[89]|9[15689])\\d{6}',
+    ),
+  ),
+  'MO' => 
+  array (
+    'countryCode' => '853',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[236]\\d{6}',
+    ),
+  ),
+  'MP' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '670(?:2(?:3[3-7]|56|8[5-8])|32[1238]|4(?:33|8[348])|5(?:32|55|88)|6(?:64|70|82)|78[589]|8[3-9]8|989)\\d{4}',
+    ),
+  ),
+  'MQ' => 
+  array (
+    'countryCode' => '596',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '696(?:[0-479]\\d|5[01]|8[0-689])\\d{4}',
+    ),
+  ),
+  'MR' => 
+  array (
+    'countryCode' => '222',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:2(?:2\\d|70)|3(?:3\\d|6[1-36]|7[1-3])|4(?:4\\d|6[0457-9]|7[4-9]))\\d{5}',
+    ),
+  ),
+  'MS' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '664492\\d{4}',
+    ),
+  ),
+  'MT' => 
+  array (
+    'countryCode' => '356',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7(?:210|[79]\\d{2}|)|9(?:2[13]\\d|696|8(?:1[1-3]|89|97)|9\\d{2}))\\d{4}',
+    ),
+  ),
+  'MU' => 
+  array (
+    'countryCode' => '230',
+    'internationalPrefix' => '0(?:[2-7]0|33)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:25\\d|4(?:2[12389]|9\\d)|7\\d{2}|87[15-8]|9[1-8]\\d)\\d{4}',
+    ),
+  ),
+  'MV' => 
+  array (
+    'countryCode' => '960',
+    'internationalPrefix' => '0(?:0|19)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7[3-9]|9[6-9])\\d{5}',
+    ),
+  ),
+  'MW' => 
+  array (
+    'countryCode' => '265',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[3-5]|77|8(?:8\\d)?|9(?:9\\d)?)\\d{6}',
+    ),
+  ),
+  'MX' => 
+  array (
+    'countryCode' => '52',
+    'internationalPrefix' => '0[09]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1(?:(?:33|55|81)\\d{8}|(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7})',
+    ),
+  ),
+  'MY' => 
+  array (
+    'countryCode' => '60',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '1(?:[02-46-9][2-9]|11\\d)\\d{6}',
+    ),
+  ),
+  'MZ' => 
+  array (
+    'countryCode' => '258',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '8[24]\\d{7}',
+    ),
+  ),
+  'NA' => 
+  array (
+    'countryCode' => '264',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:60|8[125])\\d{7}',
+    ),
+  ),
+  'NC' => 
+  array (
+    'countryCode' => '687',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7[3-9]|8[0-79]|9\\d)\\d{4}',
+    ),
+  ),
+  'NE' => 
+  array (
+    'countryCode' => '227',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[0134678]\\d{6}',
+    ),
+  ),
+  'NF' => 
+  array (
+    'countryCode' => '672',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '38\\d{4}',
+    ),
+  ),
+  'NG' => 
+  array (
+    'countryCode' => '234',
+    'internationalPrefix' => '009',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:70(?:[3-9]\\d|2[1-9])|8(?:0[2-9]|1[0235689])\\d)\\d{6}',
+    ),
+  ),
+  'NI' => 
+  array (
+    'countryCode' => '505',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '8\\d{7}',
+    ),
+  ),
+  'NL' => 
+  array (
+    'countryCode' => '31',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[1-58]\\d{7}',
+    ),
+  ),
+  'NO' => 
+  array (
+    'countryCode' => '47',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:4[015-8]|9\\d)\\d{6}',
+    ),
+  ),
+  'NP' => 
+  array (
+    'countryCode' => '977',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:7[45]|8[0145])\\d{7}',
+    ),
+  ),
+  'NR' => 
+  array (
+    'countryCode' => '674',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '55[5-9]\\d{4}',
+    ),
+  ),
+  'NU' => 
+  array (
+    'countryCode' => '683',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[125]\\d{3}',
+    ),
+  ),
+  'NZ' => 
+  array (
+    'countryCode' => '64',
+    'internationalPrefix' => '0(?:0|161)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '2(?:[079]\\d{7}|1(?:0\\d{5,7}|[12]\\d{5,6}|[3-9]\\d{5})|[28]\\d{7,8}|4[1-9]\\d{6})',
+    ),
+  ),
+  'OM' => 
+  array (
+    'countryCode' => '968',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[2-9]\\d{6}',
+    ),
+  ),
+  'PA' => 
+  array (
+    'countryCode' => '507',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:161|21[89]|8(?:1[01]|7[23]))\\d{4}|6(?:[04-8]\\d|1[0-5]|2[0-4]|3[7-9]|9[0-8])\\d{5}',
+    ),
+  ),
+  'PE' => 
+  array (
+    'countryCode' => '51',
+    'internationalPrefix' => '19(?:1[124]|77|90)00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9\\d{8}',
+    ),
+  ),
+  'PF' => 
+  array (
+    'countryCode' => '689',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[27]\\d{3}|3[0-59]\\d{2}|411[3-6])\\d{2}',
+    ),
+  ),
+  'PG' => 
+  array (
+    'countryCode' => '675',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:68|7[1236]\\d)\\d{5}',
+    ),
+  ),
+  'PH' => 
+  array (
+    'countryCode' => '63',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:0[5-9]|1[025-9]|2[0-36-9]|3[02-9]|4[236-9]|7[349]|89|9[49])\\d{7}',
+    ),
+  ),
+  'PK' => 
+  array (
+    'countryCode' => '92',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '3(?:0\\d|1[2-5]|2[1-5]|3[1-6]|4[1-7]|64)\\d{7}',
+    ),
+  ),
+  'PL' => 
+  array (
+    'countryCode' => '48',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5[013]|6[069]|7[289]|88)\\d{7}',
+    ),
+  ),
+  'PM' => 
+  array (
+    'countryCode' => '508',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '55\\d{4}',
+    ),
+  ),
+  'PR' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:787|939)[2-9]\\d{6}',
+    ),
+  ),
+  'PS' => 
+  array (
+    'countryCode' => '970',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5[69]\\d{7}',
+    ),
+  ),
+  'PT' => 
+  array (
+    'countryCode' => '351',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:[136]\\d{2}|2[124-79]\\d|4(?:80|9\\d))\\d{5}',
+    ),
+  ),
+  'PW' => 
+  array (
+    'countryCode' => '680',
+    'internationalPrefix' => '01[12]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:6[234689]0|77[45789])\\d{4}',
+    ),
+  ),
+  'PY' => 
+  array (
+    'countryCode' => '595',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:61|7[1-6]|8[1-5]|9[1-5])\\d{6}',
+    ),
+  ),
+  'QA' => 
+  array (
+    'countryCode' => '974',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[3567]\\d{7}',
+    ),
+  ),
+  'RE' => 
+  array (
+    'countryCode' => '262',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:9[23]|47)\\d{6}',
+    ),
+  ),
+  'RO' => 
+  array (
+    'countryCode' => '40',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[1-8]\\d{7}',
+    ),
+  ),
+  'RS' => 
+  array (
+    'countryCode' => '381',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:[0-689]|7\\d)\\d{6,7}',
+    ),
+  ),
+  'RU' => 
+  array (
+    'countryCode' => '7',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9\\d{9}',
+    ),
+  ),
+  'RW' => 
+  array (
+    'countryCode' => '250',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[258]\\d{7}',
+    ),
+  ),
+  'SA' => 
+  array (
+    'countryCode' => '966',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5[013-689]\\d|8111)\\d{6}',
+    ),
+  ),
+  'SB' => 
+  array (
+    'countryCode' => '677',
+    'internationalPrefix' => '0[01]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:4\\d|5[025-8]|6[01])\\d{4}|8[4-8]\\d{5}',
+    ),
+  ),
+  'SC' => 
+  array (
+    'countryCode' => '248',
+    'internationalPrefix' => '0[0-2]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '2?(?:5(?:[0-46-9]\\d|5[6-9])|7(?:[0-79]\\d|8[24-9]))\\d{3}',
+    ),
+  ),
+  'SD' => 
+  array (
+    'countryCode' => '249',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[012569]\\d{7}',
+    ),
+  ),
+  'SE' => 
+  array (
+    'countryCode' => '46',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[02-46]\\d{7}',
+    ),
+  ),
+  'SG' => 
+  array (
+    'countryCode' => '65',
+    'internationalPrefix' => '0[0-3][0-9]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:8[1-6]|9[0-8])\\d{6}',
+    ),
+  ),
+  'SI' => 
+  array (
+    'countryCode' => '386',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[37][01]|4[019]|51|64)\\d{6}',
+    ),
+  ),
+  'SJ' => 
+  array (
+    'countryCode' => '47',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:4[015-8]|9\\d)\\d{6}',
+    ),
+  ),
+  'SK' => 
+  array (
+    'countryCode' => '421',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:0[1-8]|1[0-24-9]|4[0489])\\d{6}',
+    ),
+  ),
+  'SL' => 
+  array (
+    'countryCode' => '232',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:25|3[03]|44|5[056]|7[6-8]|88)[1-9]\\d{5}',
+    ),
+  ),
+  'SM' => 
+  array (
+    'countryCode' => '378',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[16]\\d{6}',
+    ),
+  ),
+  'SN' => 
+  array (
+    'countryCode' => '221',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:0[1256]0|6(?:1[23]|2[89]|3[3489]|4[6-9]|5[1-9]|6[3-9]|7[45]|8[3-8])|7(?:01|[12-79]\\d|8[0139]))\\d{5}',
+    ),
+  ),
+  'SO' => 
+  array (
+    'countryCode' => '252',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:15|24|6[179]?\\d|7\\d|9[01])\\d{6}',
+    ),
+  ),
+  'SR' => 
+  array (
+    'countryCode' => '597',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7[1245]|8[1-9])\\d{5}',
+    ),
+  ),
+  'ST' => 
+  array (
+    'countryCode' => '239',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[89]\\d{5}',
+    ),
+  ),
+  'SV' => 
+  array (
+    'countryCode' => '503',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7\\d{7}',
+    ),
+  ),
+  'SX' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7215(?:1[02]|2\\d|5[0346]|8[01678])\\d{4}',
+    ),
+  ),
+  'SY' => 
+  array (
+    'countryCode' => '963',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:3[23]|4[457]|55|6[67]|88|9[1-49])\\d{6}',
+    ),
+  ),
+  'SZ' => 
+  array (
+    'countryCode' => '268',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[6-8]\\d{6}',
+    ),
+  ),
+  'TC' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '649(?:2(?:3[12]|4[1-5])|3(?:3[1-39]|4[1-57])|4[34][12])\\d{4}',
+    ),
+  ),
+  'TD' => 
+  array (
+    'countryCode' => '235',
+    'internationalPrefix' => '00|16',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:6[36]\\d|77\\d|9(?:5[0-4]|9\\d))\\d{5}',
+    ),
+  ),
+  'TG' => 
+  array (
+    'countryCode' => '228',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[0-289]\\d{6}',
+    ),
+  ),
+  'TH' => 
+  array (
+    'countryCode' => '66',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '[89]\\d{8}',
+    ),
+  ),
+  'TJ' => 
+  array (
+    'countryCode' => '992',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:505|9[0-35-9]\\d)\\d{6}',
+    ),
+  ),
+  'TL' => 
+  array (
+    'countryCode' => '670',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[2-4]\\d{5}',
+    ),
+  ),
+  'TM' => 
+  array (
+    'countryCode' => '993',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6[6-8]\\d{6}',
+    ),
+  ),
+  'TN' => 
+  array (
+    'countryCode' => '216',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:[29]\\d|4[01]|5[01258]|)\\d{6}',
+    ),
+  ),
+  'TO' => 
+  array (
+    'countryCode' => '676',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7[578]|8[7-9])\\d{5}',
+    ),
+  ),
+  'TR' => 
+  array (
+    'countryCode' => '90',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '5(?:0[1-35-7]|22|3\\d|4[1-79]|5[1-5]|9[246])\\d{7}',
+    ),
+  ),
+  'TT' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '868(?:29\\d|3(?:0[1-9]|1[02-9]|[2-9]\\d)|4(?:[679]\\d|8[0-4])|6(?:20|78|8\\d)|7(?:03|1[02-9]|[2-9]\\d))\\d{4}',
+    ),
+  ),
+  'TV' => 
+  array (
+    'countryCode' => '688',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '90\\d{4}',
+    ),
+  ),
+  'TW' => 
+  array (
+    'countryCode' => '886',
+    'internationalPrefix' => '0(?:0[25679]|19)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9\\d{8}',
+    ),
+  ),
+  'TZ' => 
+  array (
+    'countryCode' => '255',
+    'internationalPrefix' => '00[056]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:6[158]|7[1-9])\\d{7}',
+    ),
+  ),
+  'UA' => 
+  array (
+    'countryCode' => '380',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:39|50|6[36-8]|9[1-9])\\d{7}',
+    ),
+  ),
+  'UG' => 
+  array (
+    'countryCode' => '256',
+    'internationalPrefix' => '00[057]',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7(?:0[0-7]|[15789]\\d)\\d{6}',
+    ),
+  ),
+  'US' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:2(?:0[1-35-9]|1[02-9]|2[4589]|3[149]|4[08]|5[1-46]|6[0279]|7[06]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[014679]|47|5[12]|6[01]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|58|69|7[0589]|8[04])|5(?:0[1-57-9]|1[0235-8]|20|3[0149]|4[01]|5[19]|6[1-37]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[036]|3[016]|4[16]|5[017]|6[0-29]|78|8[12])|7(?:0[1-46-8]|1[02-9]|2[047]|3[124]|4[07]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-25]|4[3578]|5[06-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[0589]|3[1678]|4[0179]|5[1246]|7[0-3589]|8[059]))[2-9]\\d{6}',
+    ),
+  ),
+  'UY' => 
+  array (
+    'countryCode' => '598',
+    'internationalPrefix' => '0(?:1[3-9]\\d|0)',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9[13-9]\\d{6}',
+    ),
+  ),
+  'UZ' => 
+  array (
+    'countryCode' => '998',
+    'internationalPrefix' => '810',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '6(?:1(?:2(?:98|2[01])|35[0-4]|50\\d|61[23]|7(?:[01][017]|4\\d|55|9[5-9]))|2(?:11\\d|2(?:[12]1|9[01379])|5(?:[126]\\d|3[0-4])|7\\d{2})|5(?:19[01]|2(?:27|9[26])|30\\d|59\\d|7\\d{2})|6(?:2(?:1[5-9]|2[0367]|38|41|52|60)|3[79]\\d|4(?:56|83)|7(?:[07]\\d|1[017]|3[07]|4[047]|5[057]|67|8[0178]|9[79])|9[0-3]\\d)|7(?:2(?:24|3[237]|4[5-9]|7[15-8])|5(?:7[12]|8[0589])|7(?:0\\d|[39][07])|9(?:0\\d|7[079]))|9(2(?:1[1267]|5\\d|3[01]|7[0-4])|5[67]\\d|6(?:2[0-26]|8\\d)|7\\d{2}))\\d{4}|7(?:0\\d{3}|1(?:13[01]|6(?:0[47]|1[67]|66)|71[3-69]|98\\d)|2(?:2(?:2[79]|95)|3(?:2[5-9]|6[0-6])|57\\d|7(?:0\\d|1[17]|2[27]|3[37]|44|5[057]|66|88))|3(?:2(?:1[0-6]|21|3[469]|7[159])|33\\d|5(?:0[0-4]|5[579]|9\\d)|7(?:[0-3579]\\d|4[0467]|6[67]|8[078])|9[4-6]\\d)|4(?:2(?:29|5[0257]|6[0-7]|7[1-57])|5(?:1[0-4]|8\\d|9[5-9])|7(?:0\\d|1[024589]|2[0127]|3[0137]|[46][07]|5[01]|7[5-9]|9[079])|9(?:7[015-9]|[89]\\d))|5(?:112|2(?:0\\d|2[29]|[49]4)|3[1568]\\d|52[6-9]|7(?:0[01578]|1[017]|[23]7|4[047]|[5-7]\\d|8[78]|9[079]))|6(?:2(?:2[1245]|4[2-4])|39\\d|41[179]|5(?:[349]\\d|5[0-2])|7(?:0[017]|[13]\\d|22|44|55|67|88))|9(?:22[128]|3(?:2[0-4]|7\\d)|57[05629]|7(?:2[05-9]|3[37]|4\\d|60|7[2579]|87|9[07])))\\d{4}|9[0-57-9]\\d{7}',
+    ),
+  ),
+  'VC' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '784(?:4(?:3[0-4]|5[45]|9[2-5])|5(?:2[6-9]|3[0-4]|93))\\d{4}',
+    ),
+  ),
+  'VE' => 
+  array (
+    'countryCode' => '58',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '4(?:1[24-8]|2[46])\\d{7}',
+    ),
+  ),
+  'VG' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '284(?:(?:3(?:0[0-3]|4[0-367])|4(?:4[0-6]|68|99)|54[0-57])\\d{4}|496[6-9]\\d{3})',
+    ),
+  ),
+  'VI' => 
+  array (
+    'countryCode' => '1',
+    'internationalPrefix' => '011',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '340(?:2(?:01|2[067]|36|44|77)|3(?:32|44)|4(?:4[38]|7[34])|5(?:1[34]|55)|6(?:26|4[23]|9[023])|7(?:[17]\\d|27)|884|998)\\d{4}',
+    ),
+  ),
+  'VN' => 
+  array (
+    'countryCode' => '84',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:9\\d|1(?:2\\d|6[3-9]|88|99))\\d{7}',
+    ),
+  ),
+  'VU' => 
+  array (
+    'countryCode' => '678',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:5(?:7[2-5]|[3-69]\\d)|7[013-7]\\d)\\d{4}',
+    ),
+  ),
+  'WF' => 
+  array (
+    'countryCode' => '681',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:50|68|72)\\d{4}',
+    ),
+  ),
+  'WS' => 
+  array (
+    'countryCode' => '685',
+    'internationalPrefix' => '0',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:60|7[25-7]\\d)\\d{4}',
+    ),
+  ),
+  'YE' => 
+  array (
+    'countryCode' => '967',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[0137]\\d{7}',
+    ),
+  ),
+  'YT' => 
+  array (
+    'countryCode' => '262',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '639\\d{6}',
+    ),
+  ),
+  'ZA' => 
+  array (
+    'countryCode' => '27',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '(?:7[1-4689]|8[1-5789])\\d{3,7}',
+    ),
+  ),
+  'ZM' => 
+  array (
+    'countryCode' => '260',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '9(?:5[05]|6[1-9]|7[13-9])\\d{6}',
+    ),
+  ),
+  'ZW' => 
+  array (
+    'countryCode' => '263',
+    'internationalPrefix' => '00',
+    'mobile' => 
+    array (
+      'nationalNumberPattern' => '7[137]\\d{7}',
+    ),
+  ),
+);
+   
+function isValidNumber($phoneNumber,$regionCode='SA'){
+if( array_key_exists($regionCode, $this->MobileMetaData) ){
+	$phoneNumber = preg_replace(array('/\W/'),'', $phoneNumber);
+	preg_match('/'.$this->MobileMetaData[$regionCode]['mobile']['nationalNumberPattern'].'/', $phoneNumber, $match);
+	if($match){
+	   return $this->MobileMetaData[$regionCode]['countryCode'].$match[0]; 
+	}
+}
+return false;
+}
+}

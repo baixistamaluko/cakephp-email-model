@@ -1,0 +1,94 @@
+<?php
+App::uses('AppModel', 'Model');
+/**
+ * Group Model
+ *
+ * @property Account $Account
+ * @property Addressbook $Addressbook
+ */
+class Group extends AppModel {
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array(
+		'account_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'name' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+	);
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'Account' => array(
+			'className' => 'Account',
+			'foreignKey' => 'account_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'counterCache' => true
+		)
+	);
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'Addressbook' => array(
+			'className' => 'Addressbook',
+			'joinTable' => 'addressbooks_groups',
+			'foreignKey' => 'group_id',
+			'associationForeignKey' => 'addressbook_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
+	);
+
+////FIXEM GROUP COUNTETR if($group_id !=null) {$this->Addressbook->Group->updateGroupAddressCounter(count($this->request->data),$group_id);}
+function updateGroupAddressCounter($group_id=null,$Added=null,$account_id=null){
+	if (($Added!=null) && ($group_id!=null)){
+		$this->query('UPDATE `groups` AS `Group` SET `Group`.`addressbook_count`=`Group`.`addressbook_count`+'.$Added.' WHERE `Group`.`id` = '.$group_id);
+	}elseif($group_id!=null){
+		$count = $this->AddressbooksGroup->find('count',array('conditions'=>array('group_id'=>$group_id),'recursive'=>-1));
+		$this->query('UPDATE `groups` AS `Group` SET `Group`.`addressbook_count`='.$count.' WHERE `Group`.`id` = '.$group_id);
+	}elseif($account_id!=null){
+		$groups = $this->find('all',array('fields'=>array('id'),'conditions'=>array('account_id'=>$account_id),'recursive'=>-1));
+		foreach($groups as $group){
+			$this->updateGroupAddressCounter($group['Group']['id']);
+		}
+	}
+}
+
+}

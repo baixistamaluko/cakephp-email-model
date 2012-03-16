@@ -1,0 +1,67 @@
+<?php
+App::uses('AppModel', 'Model');
+/**
+ * Shorturl Model
+ *
+ */
+class Shorturl extends AppModel {
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+ /*   public $validate = array(
+		'keyword' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+	);
+  */
+
+function createShortUrlKeyword($url,$length = 5){
+			 //FIXME clean old URLs, use cron job
+				$url = trim(strtolower($url));
+				if(!$url) return false;
+				$proto = substr($url,0,4); 
+				if($proto != 'http'){ //check if it's not http & not httpS
+					$url = 'http://' . $url;
+				}
+			$length = intval( $length );
+			$possible = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			$keyword = '';
+			$count=0;
+			while($count<=10){
+				
+				$i = 0;
+				while ($i < $length) {
+					$keyword .= substr($possible, mt_rand(0, strlen($possible)-1), 1);
+					$i++;
+				}
+				//$keyword = 'FdmSxx2';
+				//$existing = $this->find('first',array('conditions'=>array('keyword'=>$keyword)));
+				// with query in insert --> 0.26
+				if($this->query("SELECT 1 FROM `shorturls`WHERE `keyword`='".$keyword. "' LIMIT 1")){
+				   $keyword=false;
+				}else{
+					break;
+				}
+			 	$count++;   
+			}
+			if($keyword!==false){
+				$data['Shorturl']=array('keyword' => $keyword,'url'=>$url);
+				//$this->save($data); // 0.6 - 0.7
+				// 0.46 0.48
+				$this->query("INSERT INTO `shorturls` (`keyword`, `url`) VALUES ('$keyword', '".addslashes($url)."')");
+			}
+			return $keyword;
+}
+
+
+
+}

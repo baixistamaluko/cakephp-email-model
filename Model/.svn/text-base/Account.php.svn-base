@@ -1,0 +1,513 @@
+<?php
+App::uses('AppModel', 'Model');
+/**
+ * Account Model
+ *
+ * @property Addressbook $Addressbook
+ * @property Draft $Draft
+ * @property Group $Group
+ * @property Message $Message
+ * @property Order $Order
+ * @property Queue $Queue
+ */
+class Account extends AppModel {
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	public $validate = array(
+		'email' =>array(
+            //'email'     => array('rule'=>'email','allowEmpty'=>false,'required'=>true),
+            'email'     => array('rule'=>'email','allowEmpty'=>false,'required'=>false),
+            'isUnique'  => array('rule'=>'isUnique'),
+            'notEmpty'  => array('rule'=>'notEmpty')
+        ),
+		'password' => array(
+            //'minLength' => array('rule'=>array('minLength',6),'allowEmpty'=>false,'required'=>true),
+            'minLength' => array('rule'=>array('minLength',6),'allowEmpty'=>false,'required'=>false),
+            'notEmpty'      => array('rule'=>'notEmpty')
+        ),
+	/*'password_confirm' => array(
+	            'comparePasswords'  => array('rule'=>array('comparePasswords','password'),'allowEmpty'=>false,'required'=>true)
+	),*/
+	'mobile' =>array(
+	'numeric' => array('rule'=>'numeric'),
+	//'minLength' => array('rule'=>array('minLength',9),'allowEmpty'=>false,'required'=>true),
+	'minLength' => array('rule'=>array('minLength',9),'allowEmpty'=>false,'required'=>false),
+	'isUnique'  => array('rule'=>'isUnique'),
+	'notEmpty'  => array('rule'=>'notEmpty')
+	),
+	'coupon_code'=>array(
+	'minLength' => array('rule'=>array('minLength',4),'allowEmpty'=>true,'required'=>false),
+	'correctCouponCode'  => array('rule'=>array('correctCouponCode','password'),'allowEmpty'=>true,'required'=>false)
+	),
+
+            'old_password' => array(
+                'rule3' => array(
+                    'rule' => array(
+                        '_checkOldPassword',
+                        'old_password'
+                    ) ,
+                    'message' => 'Your old password is incorrect, please try again'
+                ) ,
+                'rule2' => array(
+                    'rule' => array(
+                        'minLength',
+                        6
+                    ) ,
+                    'message' => 'Must be at least 6 characters'
+                ) ,
+                'rule1' => array(
+                    'rule' => 'notempty'
+                )
+            ) ,
+            'confirm_password' => array(
+                'rule3' => array(
+                    'rule' => array(
+                        '_checkPassword',
+                        'passwd',
+                        'confirm_password'
+                    ) ,
+                    'message' => 'New and confirm password field must match, please try again'
+                ) ,
+                'rule2' => array(
+                    'rule' => array(
+                        'minLength',
+                        6
+                    ) ,
+                    'message' => 'Must be at least 6 characters'
+                ) ,
+                'rule1' => array(
+                    'rule' => 'notempty',
+                )
+            ) 	
+	);
+	
+	private $myCoupon = null;
+
+	// This method gets called when validating the virtual password_confirm field
+	// If the values for password and password_confirm match, then return true
+	// else it will return false.
+	function comparePasswords( $field=array(), $compare_field=null )
+	{
+		foreach( $field as $key => $value )
+		{
+			$pass_1 = $value;
+			$pass_2 = $this->data[$this->name][ $compare_field ];
+	
+			if($pass_1 !== $pass_2) {
+				return false;
+			} else {
+				continue;
+			}
+		}
+		return true;
+	}
+	
+	function correctCouponCode( $field=array()){		
+		//$coupon_code = $this->data[$this->name][ 'coupon_code' ];
+		if(trim($this->data[$this->name][ 'coupon_code' ])=='' ) return true;
+		
+		$coupon = $this->myCoupon;
+		
+		if( (is_null( $coupon) ) ){
+			$coupon = ClassRegistry::init('Coupon')->getCoupon($this->data['Account']['coupon_code']);
+		}
+		if($coupon===false) return false;
+		
+		return true;
+	}
+	
+	/*
+	 * For anything you need to run it after user login
+	 */
+	function postLogin($id){
+		$this->id = $id;
+		$fields = array('lastlogin' => date('Y-m-d H:i:s'), 'modified' => false);
+		$this->save($fields, false, array('lastlogin'));
+	}
+	// This callback method gets called every time before a save operation starts.
+	// By default CakePHP saves passwords unhashed in the database.
+	// After all validation is succesful this method gets called and we substitute
+	// the unhashed password (that the user filled in) with its hashed counterpart.
+	// Eventually we return true otherwise the save operation fails.
+	function beforeSave( $options = array() )
+	{
+		
+		if(isset( $this->data[$this->name]['password'])){
+			$password_unhashed = $this->data[$this->name]['password'];
+			$this->data[$this->name]['password'] = AuthComponent::password( $password_unhashed );
+		}
+		//if (empty($this->id) && empty($this->data[$this->alias]['id'])){
+			// insert
+		//} else {
+			// update
+		//}
+		
+		
+		return true;
+	}
+
+	function afterSave($created)
+	{
+		
+		/*if($created) {
+			
+			$data['Addressbook']['account_id'] = $account_id;
+    		$data['Addressbook']['name'] = $this->data[$this->name]['name'];
+    		$data['Addressbook']['mobile'] = $this->data[$this->name]['mobile'];
+    		$this->Addressbook->save($data);
+    		
+    		$groupData = array();
+    		$groupData['Group']['account_id'] = $account_id;
+    		
+    		$groupData['Group']['name'] = 'Group 1';
+    		$this->Group->save($groupData);
+
+    		$this->Group->id = null;
+        	$groupData['Group']['name'] = 'Group 2';
+    		$this->Group->save($groupData);
+
+    		$this->Group->id = null;
+        	$groupData['Group']['name'] = 'Group 3';
+    		$this->Group->save($groupData);                           		
+    		
+    		
+		}*/
+		return true;
+		
+	}
+  	
+	/*
+
+	*
+	* subjects:
+	* 
+	*
+	*
+	*/
+
+	/**
+	 * User signup
+	 *
+	 * @param array $options
+	 * @return
+	 */
+	function signup($data){
+		$this->create();
+		
+		if(!empty($data)){
+						
+			$MobileNumber = ClassRegistry::init('Mobile')->isValidNumber($data['Account']['mobile'],$data['Account']['regionCode']);
+			if($MobileNumber===false) return false;
+			$data['Account']['mobile'] = $MobileNumber;
+			
+			
+			//$data['Account']['photo'] = md5( strtolower( trim( $data['Account']['email'] ) ) );			
+			//Photo
+			//md5( strtolower( trim( "MyEmailAddress@example.com " ) ) );
+			//http://en.gravatar.com/site/implement/images/
+			
+			//FIXME set timezone
+			
+			$data['Account']['email'] = strtolower(trim($data['Account']['email']));
+//			$data['Account']['addressbook_count'] = 1;			
+			
+			//credits
+			$data['Account']['credits'] = Configure::read('gv.account.defaultCredits');
+			//free_credits
+			$data['Account']['free_credits'] = Configure::read('gv.account.defaultFreeCredits');
+			//exp_credits
+			$data['Account']['exp_credits'] = Configure::read('gv.account.defaultExpCredits');
+			//exp_credits_days
+			$data['Account']['exp_credits_days'] = Configure::read('gv.account.defaultExpCreditsDays');
+						
+			//activation_completed
+			$data['Account']['activation_completed']=0;
+			
+			//activation_code
+			$data['Account']['activation_code']=rand(100000,999999);
+				
+			//activation_count
+			$data['Account']['activation_count']=1;
+
+			//token
+			$data['Account']['token']=md5($data['Account']['email'].$data['Account']['activation_code']);
+
+			//coupon.code
+			if(!empty($data['Account']['coupon_code'])){
+				$coupon = ClassRegistry::init('Coupon')->getCoupon($data['Account']['coupon_code']);
+				$this->myCoupon=$coupon;
+				if($coupon!==false){
+					if($coupon['Coupon']['credits']!=''){
+						if($coupon['Coupon']['is_replace']==1){
+							$data['Account']['credits'] = $coupon['Coupon']['credits'];
+						}else{
+							$data['Account']['credits'] += $coupon['Coupon']['credits'];
+						}
+					}
+						
+					if($coupon['Coupon']['free_credits']!=''){
+						if($coupon['Coupon']['is_replace']==1){
+							$data['Account']['free_credits'] = $coupon['Coupon']['free_credits'];
+						}else{
+							$data['Account']['free_credits'] += $coupon['Coupon']['free_credits'];
+						}
+					}
+						
+					if($coupon['Coupon']['exp_credits']!=''){
+						if($coupon['Coupon']['is_replace']==1){
+							$data['Account']['exp_credits'] = $coupon['Coupon']['exp_credits'];
+						}else{
+							$data['Account']['exp_credits'] += $coupon['Coupon']['exp_credits'];
+						}
+					}
+						
+					if($coupon['Coupon']['exp_credits_days']!=''){
+						if($coupon['Coupon']['is_replace']==1){
+							$data['Account']['exp_credits_days'] = $coupon['Coupon']['exp_credits_days'];
+						}else{
+							$data['Account']['exp_credits_days'] += $coupon['Coupon']['exp_credits_days'];
+						}
+					}
+					//$coupon['Coupon']['order_discount']
+			
+				}
+			
+			}
+			
+			
+			
+    		//$data['Addressbook'][0]['account_id'] = $account_id;
+    		$data['Addressbook'][0]['name'] = $data['Account']['name'];
+    		$data['Addressbook'][0]['mobile'] = $data['Account']['mobile'];
+
+			if($data['Account']['regionCode']=='SA'){
+				$data['Addressbook'][0]['IsSaudiNumber']=true;
+			}else{
+				$data['Addressbook'][0]['IsSaudiNumber']=false;
+			}
+    		//IsSaudiNumber $data['Account']['regionCode']
+    		
+    		$data['Group'][0]['name'] = __('Group 1');
+        	$data['Group'][1]['name'] = __('Group 2');
+        	$data['Group'][2]['name'] = __('Group 3');
+
+
+			//Save		
+			if ($this->saveAll($data)) {
+				
+				ClassRegistry::init('Mail')->sendEmail('signup',$this->request->data['Account']['name']
+				,$this->request->data['Account']['email']
+				,'Registration Successful!'
+				,$this->request->data['Account']
+				,null
+				);			
+			if(!empty($other['coupon_code'])){
+					$coupon = ClassRegistry::init('Coupon')->useCoupon($other['coupon_code'],$this->myCoupon);
+				}
+				
+				//SEND Verification Code to user (SMS).
+				$this->sendVerificationCode($data['Account']['activation_code'],$data['Account']['mobile']);
+				
+				//FIXME SEND Welcome message (eMail)
+
+				$reports = array();
+				$reports[] = array('key'=>'IP','val'=>$_SERVER['REMOTE_ADDR'],'account_id'=>$this->id);
+				$reports[] = array('key'=>'METHOD','val'=>$data['report']['method'],'account_id'=>$this->id);
+				
+				//FIXME session in model HTTP_REFERER
+				//if($this->Session->check('HTTP_REFERER')){
+				//	$reports[] = array('key'=>'HTTP_REFERER','val'=>$this->Session->read('HTTP_REFERER'),'account_id'=>$this->id);
+				//}
+				
+				ClassRegistry::init('Report')->addData($reports);
+								
+				//lp.bymobile
+				if($data['lp']['bymobile']!=''){
+					ClassRegistry::init('Loyality')->SignupByFriend($this->id,$data['lp']['bymobile']);
+				}
+				
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	function test($code){
+		ClassRegistry::init('Coupon')->useCoupon($code);
+		
+	}
+
+	/**
+	 * User activate by verifiing activation code
+		*
+		* @param array $options
+		* @return
+		*/
+	function sendVerificationCode($code,$mobile,$var1=null){
+		/*
+		 * FIXME Send SMS with the new Code
+		*/
+	}
+
+	/**
+	 * enable user account
+		*
+		* @param array $options
+		* @return
+		*/
+	function enable($account_id){
+		/*
+		 * Set status to 1
+		*/
+	}
+
+	/**
+	 * Enable user account
+	 *
+	 * @param array $options
+	 * @return
+	 */
+	function disable($account_id){
+		/*
+		 * Set status to -1
+		*/
+	}
+
+	/**
+	 * Request new SMS subject
+		*
+		* @param array $options
+		* @return
+		*/
+	function requestSubject($account_id,$subject_id){
+		/*
+		 * Update subject
+		* send email to user
+		* send email to admin
+		*/
+	}
+
+	/**
+	 * Approve new SMS subject
+	 *
+	 * @param array $options
+		* @return
+		*/
+	function approveSubject($account_id,$subject_id){
+		/*
+		 * Update subject
+		* send email to user
+		*/
+	}
+
+	/**
+	 * Reject new SMS subject
+	 *
+	 * @param array $options
+	 * @return
+	 */
+	function rejectSubject($account_id,$subject_id){
+		/*
+		 * Update subject
+		* send email to user
+		*/
+	}
+
+	/**
+	 * send announcement to user(s)
+	 *
+	 * @param array $options
+	 * @return
+	 */
+	function sendAnnouncement($account_ids){
+
+	}
+
+	/**
+	 * clear announcement
+	 *
+	 * @param array $options
+	 * @return
+	 */
+	function clearAnnouncement($account_id){
+
+	}
+
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+	/**
+	 * hasMany associations
+	 *
+	 * @var array
+	 */
+	public $hasMany = array(
+		'Addressbook' => array(
+			'className' => 'Addressbook',
+			'foreignKey' => 'account_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+	),
+		'Draft' => array(
+			'className' => 'Draft',
+			'foreignKey' => 'account_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+	),
+		'Group' => array(
+			'className' => 'Group',
+			'foreignKey' => 'account_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+	),
+	);
+
+
+    function _checkOldPassword($field1 = array() , $field2 = null)
+    {
+        $user = $this->find('first', array(
+            'conditions' => array(
+                'Account.id' => $_SESSION['Auth']['User']['id']
+            ) ,
+            'recursive' => -1
+        ));
+        if (AuthComponent::password($this->data[$this->name][$field2]) == $user[$this->name]['password']) {
+            return true;
+        }
+        return false;
+    }
+
+    // check the new and confirm password
+    function _checkPassword($field1 = array() , $field2 = null, $field3 = null)
+    {
+        if ($this->data[$this->name][$field2] == $this->data[$this->name][$field3]) {
+            return true;
+        }
+        return false;
+    }    	
+
+}
