@@ -10,10 +10,12 @@ How to add it to CakePHP project
 
 Very simple!:
 
-1. Model/Mail.php to your Model directory
-2. Console/SendMailShell.php to your Console directory
-3. Add your email to core configuration file (core.php)  Configure::write('emailSender','noreply@example.com');
-4. Create the below table in your database
+1. Model/Mail.php to your Model directory.
+2. Console/SendMailShell.php to your Console directory.
+3. Add your email to core configuration file (core.php):
+	Configure::write('emailSender','noreply@example.com');
+4. Create the below table in your database.
+
 	CREATE TABLE IF NOT EXISTS `mails` (`id` int(10) unsigned NOT NULL AUTO_INCREMENT,`sent` tinyint(1) NOT NULL DEFAULT '0',`data` text NOT NULL,`when` date DEFAULT NULL,`created` datetime NOT NULL,PRIMARY KEY (`id`),KEY `sent` (`sent`),KEY `when` (`when`)) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 How to use it
