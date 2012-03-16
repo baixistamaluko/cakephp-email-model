@@ -18,7 +18,7 @@ Very simple!:
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 	`sent` tinyint(1) NOT NULL DEFAULT '0',
 	`data` text NOT NULL,
-		`when` date DEFAULT NULL,
+	`when` date DEFAULT NULL,
 	`created` datetime NOT NULL,
 	PRIMARY KEY (`id`),
 	KEY `sent` (`sent`),
